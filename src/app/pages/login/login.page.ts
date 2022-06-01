@@ -8,17 +8,22 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  email:string;
-  password:string;
+  email: string;
+  password: string;
 
   constructor(private loginService: LoginService) { }
-autenticazione(){
-  this.loginService.login(this.email, this.password).subscribe(resp=> {
-    const user:UserDTO=resp;
-    console.log(user);
-  })
-}
+  autenticazione() {
+    this.loginService.login(this.email, this.password).subscribe(
+      resp => {
+        const user: UserDTO = resp;
+        console.log(user);
+      },
+      error => {
+        console.log(error.error.message)
+      })
+  }
   ngOnInit() {
   }
+
 
 }
