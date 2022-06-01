@@ -2,7 +2,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserDTO } from 'src/app/model/package/DTO/user-dto';
-import { LoginService } from '../login.service';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
