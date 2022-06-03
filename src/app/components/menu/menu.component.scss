@@ -1,0 +1,45 @@
+.my-custom-menu {
+    --width: 500px;
+    --ion-toolbar-background: rgb(8, 30, 68);
+    font-family: "fontMenu";
+    --ion-item-background: rgb(8, 30, 68);
+    --ion-item-color:white;
+    --padding:10 px;
+    height: 100vh;
+  
+    }
+  @font-face {
+    font-family: ‘fontMenu’;
+    font-style: normal;
+    font-weight: 900;
+    src: url("/assets/icons/icons.woff2");
+  }
+  .padding{
+    padding-top:2rem;
+    padding-bottom: 2rem;
+  }
+  
+  #riga {
+    border: 1px solid;
+    border-style: solid;
+    border-color: white;
+  }
+  
+  .color{
+    --ion-item-background: rgb(112, 90, 233);
+  
+  }
+  
+  .colore{
+  
+    --ion-background-color: rgb(8, 30, 68);
+  }
+  
+  ion-accordion.accordion-expanding ion-item[slot="header"],
+  ion-accordion.accordion-expanded ion-item[slot="header"]{
+    --background:rgb(27, 42, 90);
+  }
+  ion-accordion.accordion-collapsed ion-item[slot="header"],
+  ion-accordion.accordion-collapsing ion-item[slot="header"]{
+    --background:rgb(8, 30, 68);
+  }

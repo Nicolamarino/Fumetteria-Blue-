@@ -1,7 +1,11 @@
-<ion-header [translucent]="true">
+<app-menu></app-menu>
+<ion-header>
   <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
     <ion-title>
-      Blank
+      <ion-header> </ion-header>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,9 +16,3 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
