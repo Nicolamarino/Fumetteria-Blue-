@@ -20,50 +20,48 @@
   <div class="padding">
     <h1>Lista Autori</h1>
 
-    <ion-grid>
-      <ion-accordion-group>
-        <ion-accordion>
-      <ion-row slot="header">
-        <ion-col>
+    <ion-accordion-group class="ion-padding-vertical">
+      <ion-accordion>
+        <ion-item slot="header">
           <h5>Filtri</h5>
-        </ion-col>
-      </ion-row>
-      <div slot="content">
-        <form [formGroup]="filterform">
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-label>
-              <ion-input placeholder="NOME" formControlName="nome"></ion-input>
-            </ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item>
-            <ion-label>
-              <ion-input placeholder="COGNOME" formControlName="cognome"></ion-input>
-            </ion-label>
-          </ion-item>
-        </ion-col>
-        <ion-col></ion-col>
-      </ion-row>
-     
-      <ion-row>
-        <ion-col>
-          <app-bottone testo="RESET" tipo="reset" (click)="reset()"></app-bottone>
-          <app-bottone testo="CERCA" (click)="cerca()"></app-bottone>
-        </ion-col>
-      </ion-row>
-    </form>
-    </div>
-    
-    </ion-accordion>
+        </ion-item>
+
+        <div slot="content">
+          <form [formGroup]="filterform">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-row>
+                    <ion-col>
+                      <ion-label></ion-label>
+                      <ion-input placeholder="NOME" formControlName="nome"></ion-input>
+                    </ion-col>
+                    <ion-col>
+                      <ion-label></ion-label>
+                      <ion-input placeholder="COGNOME" formControlName="cognome"></ion-input>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+                <ion-col>
+                  <ion-row>
+                    <ion-col>
+                      <app-bottone testo="RESET" tipo="reset" (click)="reset()"></app-bottone>
+                      <app-bottone testo="CERCA" (click)="cerca()"></app-bottone>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </form>
+        </div>
+
+      </ion-accordion>
     </ion-accordion-group>
-    </ion-grid>
   </div>
 
   <div class="riga">
-    <div class="padding"> 
+    <div class="padding">
       <ion-grid class="padding2">
         <ion-row class="colore ion-text-center">
           <ion-col>
@@ -78,16 +76,11 @@
         </ion-row>
         <ion-row class="riga2">
           <ion-col class="riga2">
-    
-          </ion-col>
-          <ion-col class="riga2">
-            
-          </ion-col>
-          <ion-col class="riga2">
-            
+            <div *ngFor="let item of listaAutori.list">
+              <app-autore nomeCompleto="{{item.viewValue}}"></app-autore>
+            </div>
           </ion-col>
         </ion-row>
-
       </ion-grid>
     </div>
   </div>

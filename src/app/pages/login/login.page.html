@@ -2,34 +2,40 @@
 
 <ion-content>
   <form [formGroup]="loginForm">
-  <ion-grid class="set-grid" >
-    <ion-row>
-      <ion-col>
-        <app-header-login testoBenv="Benvenuti in Login"></app-header-login>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="4">
-      </ion-col>
-      <ion-col size="12" size-lg>
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email" formControlName="email" [(ngModel)]="email">
-          </ion-input>
-          <ion-icon slot="end" name="mail-sharp"></ion-icon>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" formControlName="password" [(ngModel)]="password">
-          </ion-input>
-          <ion-icon slot="end" name="lock-open"></ion-icon>
-        </ion-item>
-        <ion-button class="ion-float-right ion-padding-vertical" [disabled]="!loginForm.valid" (click)="autenticazione()">LOGIN</ion-button>
-      </ion-col>
-      <ion-col size="4">  
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</form>
+    <ion-grid class="set-grid">
+      <ion-row>
+        <ion-col>
+          <app-header-login testoBenv="Benvenuti in Login"></app-header-login>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+        </ion-col>
+        <ion-col size="12" size-lg>
+          <div class="ion-padding-vertical">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" formControlName="email">
+              </ion-input>
+              <ion-icon slot="end" name="mail-sharp"></ion-icon>
+            </ion-item>
+          </div>
+          
+            <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input [type]="passwordType" formControlName="password">
+            </ion-input>
+            <ion-icon slot="end" name="eye-off-outline" [hidden]="show" (click)="mostraPsw()"></ion-icon>
+            <ion-icon slot="end" name="eye-outline" [hidden]="!show" (click)="mostraPsw()"></ion-icon>
+          </ion-item>
+          
+          <ion-button class="ion-float-right ion-padding-vertical" [disabled]="!loginForm.valid"
+            (click)="autenticazione()">LOGIN</ion-button>
+        </ion-col>
+        <ion-col size="4">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
 <app-footer></app-footer>
