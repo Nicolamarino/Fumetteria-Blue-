@@ -9,7 +9,7 @@
         <img src="assets/icons/logo_devskill@2x.png" />
       </ion-header>
     </ion-title>
-    <div slot="end">
+    <div slot="end" class="ion-padding-end">
       <app-user-component></app-user-component>
     </div>
   </ion-toolbar>
@@ -77,8 +77,21 @@
         <ion-row class="riga2">
           <ion-col class="riga2">
             <div *ngFor="let item of listaAutori.list">
-              <app-autore nomeCompleto="{{item.viewValue}}"></app-autore>
-            </div>
+              <ion-row>
+                <ion-col size="9">
+                  <app-autore nomeCompleto="{{item.viewValue}}" id="{{item.value}}"></app-autore>  
+                </ion-col>
+                <ion-col class="ion-padding-vertical" size="3">
+                  <div class="ion-float-end" >
+                    <ion-button>Modifica</ion-button>
+                  <ion-button (click)="elimina(item)" color="danger"><ion-icon name="trash-outline"></ion-icon></ion-button> 
+                  </div>
+                  
+                </ion-col>
+              </ion-row>  
+                    
+            </div> 
+              
           </ion-col>
         </ion-row>
       </ion-grid>

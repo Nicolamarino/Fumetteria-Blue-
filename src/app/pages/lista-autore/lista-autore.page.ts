@@ -25,10 +25,24 @@ listaAutori:ListaAutoriDTO;
  reset(){
    this.filterform.reset()
  }
-  ngOnInit() {
+ elimina(item:AutoreDTO){
+  let index = this.listaAutori.list.indexOf(item);
+  console.log(item);
+  console.log(index);
+  this.listaAutori.list.splice(index,1);
+  console.log(this.listaAutori.list);  
+ 
+  this.service.eliminaListaAutori(item.value).subscribe(resp =>{
+    this.creaLista();})
+
+ }
+ creaLista(){
     this.service.creaListaAutori().subscribe(resp =>{
       this.listaAutori=resp;
     })
+ }
+  ngOnInit() {
+    this.creaLista();
   }
 
 }

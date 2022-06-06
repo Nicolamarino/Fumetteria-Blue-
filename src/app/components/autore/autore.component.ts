@@ -6,8 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./autore.component.scss'],
 })
 export class AutoreComponent implements OnInit {
-  @Input() nome: string;
-  @Input() cognome: string;
+  nome: string;
+  cognome: string;
+  @Input() id:number;
   @Input() nomeCompleto: string;
   constructor() { }
 

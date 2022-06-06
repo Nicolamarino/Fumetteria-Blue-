@@ -10,10 +10,11 @@ id:number;
   creaListaAutori() {
     return this.http.post("http://2.44.173.210:7080/comic-be/api/author/select", {});
   }
- // eliminaListaAutori() {
- //   return this.http.delete("http://2.44.173.210:7080/comic-be/api/author/delete/"+this.id );
- // }
- // modificaListaAutori() {
- //   return this.http.put("http://2.44.173.210:7080/comic-be/api/author/update/",{ viewValue });
- // }
+  eliminaListaAutori(id:number) {
+    const headers = { 'Content-Type': 'application/json'};
+    return this.http.delete("http://2.44.173.210:7080/comic-be/api/author/delete/"+id, {headers} );
+  }
+  //modificaListaAutori() {
+  //  return this.http.put("http://2.44.173.210:7080/comic-be/api/author/update/",{ viewValue });
+  //}
 }
