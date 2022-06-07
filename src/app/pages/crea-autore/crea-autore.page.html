@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-header class="ion-text-center">
+        <img src="assets/icons/logo_devskill@2x.png" />
+      </ion-header>
+    </ion-title>
+    <div slot="end" class="ion-padding-end">
+      <app-user-component></app-user-component>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="autoreForm">
+  <ion-button class="ion-padding-vertical">Torna Indietro</ion-button>
+  <div class="padding ion-padding-vertical">
+    <div>
+    <h1>Crea Autori</h1>
+  </div>
+  <ion-grid >
+    <ion-row class="padding">
+        <ion-col>
+          <ion-item>
+            <ion-input placeholder="NOME" formControlName="name"></ion-input>
+        </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+          <ion-input placeholder="COGNOME" formControlName="surname"></ion-input>
+        </ion-item> 
+        </ion-col>
+        <ion-col>
+          <app-bottone testo="SALVA" class="ion-float-start" [disabilitato]="!autoreForm.valid" (click)="aggiungiAutore()"></app-bottone>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+</form>
+</ion-content>
+<app-footer></app-footer>

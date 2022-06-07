@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./bottone.component.scss'],
 })
 export class BottoneComponent implements OnInit {
-@Input()testo:string;
+@Input() testo:string;
+@Input() disabilitato:boolean=true;
 
   constructor() { }
 
