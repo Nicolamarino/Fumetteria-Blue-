@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'crea-autore',
     loadChildren: () => import('./pages/crea-autore/crea-autore.module').then( m => m.CreaAutorePageModule)
   },
+  {
+    path: 'crea-fumetto',
+    loadChildren: () => import('./pages/fumetto/crea-fumetto/crea-fumetto.module').then( m => m.CreaFumettoPageModule)
+  },
+  {
+    path: 'lista-fumetti',
+    loadChildren: () => import('./pages/fumetto/lista-fumetti/lista-fumetti.module').then( m => m.ListaFumettiPageModule)
+  },
 
   
 

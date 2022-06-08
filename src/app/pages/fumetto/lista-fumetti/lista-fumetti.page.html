@@ -1,0 +1,104 @@
+<app-menu></app-menu>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-header class="ion-text-center">
+        <img src="assets/icons/logo_devskill@2x.png" />
+      </ion-header>
+    </ion-title>
+    <div slot="end" class="ion-padding-end">
+      <app-user-component></app-user-component>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="padding">
+    <h1>Lista Fumetti</h1>
+
+    <ion-accordion-group class="ion-padding-vertical">
+      <ion-accordion>
+        <ion-item slot="header">
+          <h5>Filtri</h5>
+        </ion-item>
+
+        <div slot="content">
+          <form [formGroup]="filterForm">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-row>
+                    <ion-col>
+                      <ion-label></ion-label>
+                      <ion-input placeholder="NOME" formControlName="nome"></ion-input>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+                <ion-col>
+                  <ion-row>
+                    <ion-col>
+                      <app-bottone testo="RESET" tipo="reset" (click)="reset()" [disabilitato]="false"></app-bottone>
+                      <app-bottone testo="CERCA" (click)="cerca()" [disabilitato]="false"></app-bottone>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </form>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </div>
+
+  <div class="riga">
+    <div class="padding">
+      <ion-grid class="padding2">
+        <ion-row class="colore ion-text-center">
+          <ion-col>
+            NOME
+          </ion-col>
+          <ion-col>
+            DESCRIZIONE
+          </ion-col>
+          <ion-col>
+            TIPO
+          </ion-col>
+          <ion-col>
+            AUTORE
+          </ion-col>
+          <ion-col>
+            CATEGORIA
+          </ion-col>
+          <ion-col>
+            AZIONI
+          </ion-col>
+        </ion-row>
+        <ion-row class="riga2">
+          <ion-col class="riga2">
+            <div *ngFor="let item of listaFumetti.list">
+              <ion-row>
+                <ion-col size="9">
+                  <app-fumetto nome="{{item.name}}" descrizione="{{item.description}}" tipo="{{item.type}}"
+                  autore="{{item.author}}" categoria="{{item.category}}" id="{{item.id}}"></app-fumetto>
+                </ion-col>
+                <ion-col class="ion-padding-vertical" size="3">
+                  <div class="ion-float-end">
+                    <ion-button>Modifica</ion-button>
+                    <ion-button (click)="elimina(item)" color="danger">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </ion-button>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+<app-footer></app-footer>

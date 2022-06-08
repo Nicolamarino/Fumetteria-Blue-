@@ -1,0 +1,88 @@
+<app-menu></app-menu>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-header class="ion-text-center">
+        <img src="assets/icons/logo_devskill@2x.png" />
+      </ion-header>
+    </ion-title>
+    <div slot="end" class="ion-padding-end">
+      <app-user-component></app-user-component>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="fumettoForm">
+    <ion-button class="ion-padding-vertical">Torna Indietro</ion-button>
+    <div class=" ion-padding-vertical">
+      <div>
+        <h1>Crea Fumetto</h1>
+      </div>
+
+      <ion-grid >
+        <ion-row class="padding">
+          <ion-col >
+            <ion-label>Nome</ion-label>
+            <ion-item>
+              <ion-input placeholder="NOME" formControlName="name"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-label>Descrizione</ion-label>
+            <ion-item>
+              <ion-input placeholder="DESCRIZIONE" formControlName="description"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="padding">
+          <ion-col >
+            <ion-label>Tipo</ion-label>
+            <ion-item>
+              <ion-input placeholder="TIPO" formControlName="type"></ion-input>
+              <ion-select  okText="OK" cancel-text="Indietro" value="FUMETTO">
+                <ion-select-option value="FUMETTO">FUMETTO</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+
+          <ion-col>
+            <ion-label>Autore</ion-label>
+            <ion-item>
+              <ion-input placeholder="AUTORE" formControlName="author"></ion-input>
+              <ion-select  okText="OK" cancel-text="Indietro">
+                <ion-select-option value="Milo Manara" >Milo Manara </ion-select-option>
+              </ion-select >
+            </ion-item>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="padding">
+          <ion-label>Categoria</ion-label>
+          <ion-item>
+            <ion-input placeholder="CATEGORIA" formControlName="category"></ion-input>
+            <ion-select  okText="OK" cancel-text="Indietro">
+              <ion-select-option value="Azione" >Azione</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-row>
+        <!--
+            <ion-row>
+              <ion-item>
+                <ion-input placeholder="FOTO" formControlName="photo"></ion-input>  
+              </ion-item>
+            </ion-row>
+            -->
+        <ion-row>
+          <app-bottone testo="SALVA" class="ion-float-end" [disabilitato]="!fumettoForm.valid"(click)="aggiungiFumetto()"></app-bottone>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </form>
+</ion-content>
+<app-footer></app-footer>
