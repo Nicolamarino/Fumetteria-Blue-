@@ -8,7 +8,7 @@
   </ion-header>
   <ion-content class="colore">
     <ion-item button>
-      <ion-label> Home </ion-label>
+      <ion-label routerLink="/home"> Home </ion-label>
     </ion-item>
 
     <ion-accordion-group>
@@ -17,16 +17,16 @@
           Autore
         </ion-item>
         <ion-list slot="content" class="color">
-          <ion-item button>Lista Autore</ion-item>
-          <ion-item button>Crea Autore</ion-item>
+          <ion-item button routerLink="/lista-autore">Lista Autore</ion-item>
+          <ion-item button routerLink="/crea-autore">Crea Autore</ion-item>
         </ion-list>
       </ion-accordion>
 
       <ion-accordion>
         <ion-item slot="header">Categoria</ion-item>
         <ion-list slot="content" class="color">
-          <ion-item button>Lista Categoria</ion-item>
-          <ion-item button>Crea Categoria</ion-item>
+          <ion-item button routerLink="/lista-categorie">Lista Categoria</ion-item>
+          <ion-item button routerLink="/aggiorna-categorie">Aggiorna Categoria</ion-item>
         </ion-list>
       </ion-accordion>
 

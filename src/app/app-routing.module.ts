@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'crea-autore',
     loadChildren: () => import('./pages/crea-autore/crea-autore.module').then( m => m.CreaAutorePageModule)
+  },  {
+    path: 'aggiorna-categorie',
+    loadChildren: () => import('./pages/aggiorna-categorie/aggiorna-categorie.module').then( m => m.AggiornaCategoriePageModule)
   },
+  {
+    path: 'lista-categorie',
+    loadChildren: () => import('./pages/lista-categorie/lista-categorie.module').then( m => m.ListaCategoriePageModule)
+  },
+
 
   
 
