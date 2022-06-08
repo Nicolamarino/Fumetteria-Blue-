@@ -3,13 +3,31 @@
   <ng-template>
     <ion-content>
       <ion-grid>
+        <ion-header>
+        
+          <p>nome cognome</p>
+               <p>mail</p>
+       
+      </ion-header> 
         <ion-row>
-          <ion-col><p>nome</p></ion-col>
-          <ion-col><p>cognome</p></ion-col>
+          <ion-col><ion-item button>Modifica Dati</ion-item></ion-col>
         </ion-row>
         <ion-row>
-          <ion-col><p>mail</p></ion-col>
+          <ion-col><ion-item>Logout</ion-item></ion-col>
         </ion-row>
       </ion-grid>
     </ion-content>
   </ng-template>
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        nome cognome email
+      </ion-item>
+      <ion-item>
+        modifica dati
+      </ion-item>
+      <ion-item  button (click)="logout()">
+        Logout
+      </ion-item>
+    </ion-list>
+  </ion-content>

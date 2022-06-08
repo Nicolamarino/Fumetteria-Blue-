@@ -1,8 +1,21 @@
-.popover_setting .popover-content {
-    --min-width: 600px !important;
-    --min-height: 150px !important;
-    --ion-background-color: red;
-    --ion-text-color: #ffffff;
-    background-color: red;
-    --padding: 5rem;
+//.popover_setting .popover-content {
+//    --min-width: 600px !important;
+//    --min-height: 150px !important;
+ //   --ion-background-color: red;
+ //   --ion-text-color: #ffffff;
+ //   background-color: red;
+ //   --padding: 5rem;
+//}
+ion-content{
+    --background: rgb(221,101,231);
+    
+  
+}
+ion-item{
+    --background: rgb(221,101,231);
+    color:white;  
+}
+ion-grid{
+    color: white;
+    
 }
