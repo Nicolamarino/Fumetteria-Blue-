@@ -30,6 +30,14 @@ const routes: Routes = [
     path: 'lista-categorie',
     loadChildren: () => import('./pages/lista-categorie/lista-categorie.module').then( m => m.ListaCategoriePageModule)
   },
+  {
+    path: 'crea-fumetto',
+    loadChildren: () => import('./pages/fumetto/crea-fumetto/crea-fumetto.module').then( m => m.CreaFumettoPageModule)
+  },
+  {
+    path: 'lista-fumetti',
+    loadChildren: () => import('./pages/fumetto/lista-fumetti/lista-fumetti.module').then( m => m.ListaFumettiPageModule)
+  },
 
 
   
