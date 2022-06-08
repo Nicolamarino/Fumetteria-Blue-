@@ -1,9 +1,19 @@
+
+
 export class CreaFumettoDto {
-    id:number;
+  id: number;
+  name: string;
+  description: string;
+  type: string;
+  author: {
+    id: number;
+    name: string;
+    surname: string;
+  };
+  category: {
+    id:string;
     name:string;
     description:string;
-    type:string;
-    author:string;
-    category:string;
-    photo:any;
+  }
+  photo: any;
 }

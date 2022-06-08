@@ -9,7 +9,7 @@ export class ListaFumettiService {
   id:number;
   constructor(private http: HttpClient) { }
   creaListaFumetti() {
-    return this.http.post<ListaFumettiDto>("http://2.44.173.210:7080/comic-be/api/comic/select", {});
+    return this.http.post<ListaFumettiDto>("http://2.44.173.210:7080/comic-be/api/comic/search", {});
   }
   eliminaListaFumetti(id:number) {
     const headers = { 'Content-Type': 'application/json'};

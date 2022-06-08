@@ -22,9 +22,9 @@ export class CreaFumettoPage implements OnInit {
     this.fumettoForm=this.fb.group({
     name:['',[Validators.required]],
     description:['',[Validators.required]],
-    type:[''],
-    author:[''],
-    category:['']
+    type:['', Validators.required],
+    author:['' , Validators.required],
+    category:['' , Validators.required]
   }
   );
 }
