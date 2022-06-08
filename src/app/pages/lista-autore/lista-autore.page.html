@@ -82,9 +82,19 @@
                   <app-autore nomeCompleto="{{item.viewValue}}" id="{{item.value}}"></app-autore>  
                 </ion-col>
                 <ion-col class="ion-padding-vertical" size="3">
-                  <div class="ion-float-end" >
-                    <ion-button>Modifica</ion-button>
-                  <ion-button (click)="elimina(item)" color="danger"><ion-icon name="trash-outline"></ion-icon></ion-button> 
+                  <div class="ion-float-center">
+                    <ion-row class="ion-padding-vertical" >
+                      <ion-col size="4">
+                        <ion-icon class="ion-float-end" name="create"></ion-icon>
+                      </ion-col>
+                      <ion-col size="4">
+                        <ion-icon (click)="elimina(item)" color="danger" name="trash-outline"></ion-icon>
+                      </ion-col>
+                      <ion-col size="4">
+
+                      </ion-col>
+                    </ion-row>
+                   
                   </div>
                   
                 </ion-col>

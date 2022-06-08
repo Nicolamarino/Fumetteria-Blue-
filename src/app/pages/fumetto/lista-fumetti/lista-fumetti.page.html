@@ -56,7 +56,7 @@
 
   <div class="riga">
     <div class="ion-padding-end">
-      <ion-grid >
+      <ion-grid>
         <ion-row class="colore">
           <ion-col class="ion-text-right" size="1">
             NOME
@@ -86,7 +86,7 @@
                   <ion-row slot="header">
                     <ion-col size="11">
                       <app-fumetto nome="{{item.name}}" descrizione="{{item.description}}" tipo="{{item.type}}"
-                        autore="{{item.author.name}} {{item.author.surname}}" categoria="{{item.category}}"
+                        autore="{{item.author.name}} {{item.author.surname}}" categoria="{{item.category.name}}"
                         id="{{item.id}}"></app-fumetto>
 
                     </ion-col>
@@ -95,24 +95,21 @@
                       <div class="ion-float-center">
                         <ion-row>
                           <ion-col size="6">
-                           <ion-icon name="create"></ion-icon> 
+                            <ion-icon name="create"></ion-icon>
                           </ion-col>
                           <ion-col size="6">
                             <ion-icon (click)="elimina(item)" color="danger" name="trash-outline"></ion-icon>
                           </ion-col>
                         </ion-row>
-                        
-                          
-                          
-                        
+
                       </div>
                     </ion-col>
                   </ion-row>
-                  
+
                   <ion-item slot="content">
                     <ion-thumbnail slot="start">
-                    <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/marinaccio.jpg">
-                  </ion-thumbnail>
+                      <img src="https://www.rollingstone.it/wp-content/uploads/2021/10/marinaccio.jpg">
+                    </ion-thumbnail>
                   </ion-item>
                 </ion-accordion>
               </ion-accordion-group>
