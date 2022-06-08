@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
 import { HomePageRoutingModule } from './home-routing.module';
 import { MenuComponent } from 'src/app/components/menu/menu.component';
 import { UserComponentComponent } from 'src/app/components/user-component/user-component.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { UserInfoComponent } from 'src/app/components/user-info/user-info.component';
+
 
 
 @NgModule({
@@ -17,6 +18,6 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, MenuComponent, UserComponentComponent, FooterComponent]
+  declarations: [HomePage, MenuComponent, UserComponentComponent, FooterComponent, UserInfoComponent]
 })
 export class HomePageModule {}
