@@ -1,8 +1,10 @@
-
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, EventEmitter, NgZone, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserDTO } from 'src/app/model/package/DTO/user-dto';
+
 import { LoginService } from './login.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -25,9 +27,10 @@ export class LoginPage implements OnInit {
     this.loginService.login(this.email, this.password).subscribe(
       resp => {
         const user: UserDTO = resp;
+        const id = user.id;
         //thx to fratellino Kebabi
         this.zone.runOutsideAngular(() => {
-          window.location.href = '/home';
+          window.location.href = '/home?id='+ id;
         });
       },
       error => {
@@ -37,6 +40,4 @@ export class LoginPage implements OnInit {
   }
   ngOnInit() {
   }
-
-
 }
