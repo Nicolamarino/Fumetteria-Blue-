@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AutoreDTO } from 'src/app/model/package/DTO/autore-dto';
+import { CreaAutoreDTO } from 'src/app/model/package/DTO/crea-autore-dto';
 import { ListaAutoriDTO } from 'src/app/model/package/DTO/lista-autori-dto';
 import { ListaAutoreService } from './lista-autore.service';
 
@@ -11,24 +11,24 @@ import { ListaAutoreService } from './lista-autore.service';
 })
 export class ListaAutorePage implements OnInit {
 filterform;
-autore:AutoreDTO;
+autore:CreaAutoreDTO;
 listaAutori:ListaAutoriDTO;
   constructor(private fb:FormBuilder, private service:ListaAutoreService) {
     this.filterform=this.fb.group ({
     "nome":[""],
     "cognome":[""]
     });
-  this.autore= new AutoreDTO;
+  this.autore= new CreaAutoreDTO;
   this.listaAutori= new ListaAutoriDTO; 
   }
 
  reset(){
    this.filterform.reset()
  }
- elimina(item:AutoreDTO){
+ elimina(item:CreaAutoreDTO){
   let index = this.listaAutori.list.indexOf(item);
   this.listaAutori.list.splice(index,1);
-  this.service.eliminaListaAutori(item.value).subscribe(resp =>{
+  this.service.eliminaListaAutori(item.id).subscribe(resp =>{
     this.creaLista();})
 
  }

@@ -6,13 +6,16 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./autore.component.scss'],
 })
 export class AutoreComponent implements OnInit {
-  nome: string;
-  cognome: string;
+
+  
   @Input() id:number;
-  @Input() nomeCompleto: string;
+  @Input() nome:string;
+  @Input() cognome:string;
+
   constructor() { }
 
   ngOnInit() {
+    /*
     const separato = this.nomeCompleto.split(" ");
     this.nome = separato[0];
     this.cognome = separato[1];
@@ -34,7 +37,7 @@ export class AutoreComponent implements OnInit {
         }
       }
       index++
-    }
+    }*/
   }
 
 }

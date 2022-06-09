@@ -9,6 +9,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { UserComponentComponent } from 'src/app/components/user-component/user-component.component';
 import { BottoneComponent } from 'src/app/components/bottone/bottone.component';
 import { FumettoComponent } from 'src/app/components/fumetto/fumetto.component';
+import { AutoreComponent } from 'src/app/components/autore/autore.component';
 
 
 @NgModule({
@@ -19,6 +20,6 @@ import { FumettoComponent } from 'src/app/components/fumetto/fumetto.component';
     ListaFumettiPageRoutingModule,
     ReactiveFormsModule,
   ],
-  declarations: [ListaFumettiPage,MenuComponent,FooterComponent,UserComponentComponent,BottoneComponent,FumettoComponent]
+  declarations: [ListaFumettiPage,MenuComponent,FooterComponent,UserComponentComponent,BottoneComponent,FumettoComponent,]
 })
 export class ListaFumettiPageModule {}

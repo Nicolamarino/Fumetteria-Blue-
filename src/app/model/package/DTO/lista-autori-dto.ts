@@ -1,4 +1,6 @@
-import { AutoreDTO } from "./autore-dto";
+import { CreaAutoreDTO } from "./crea-autore-dto";
+
 export class ListaAutoriDTO {
-    list?:AutoreDTO[]=[];
+    list?:CreaAutoreDTO[]=[];
+  
 }

@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ListaAutoreService {
-id:number;
+  id:number;
   constructor(private http: HttpClient) { }
   creaListaAutori() {
-    return this.http.post("http://2.44.173.210:7080/comic-be/api/author/select", {});
+    return this.http.post("http://2.44.173.210:7080/comic-be/api/author/search", {});
   }
+
+
   eliminaListaAutori(id:number) {
     const headers = { 'Content-Type': 'application/json'};
     return this.http.delete("http://2.44.173.210:7080/comic-be/api/author/delete/"+id, {headers} );

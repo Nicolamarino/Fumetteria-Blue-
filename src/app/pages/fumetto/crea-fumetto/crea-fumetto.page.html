@@ -24,15 +24,15 @@
         <h1>Crea Fumetto</h1>
       </div>
 
-      <ion-grid >
-        <ion-row class="padding">
-          <ion-col >
+      <ion-grid>
+        <ion-row size="2" class="padding">
+          <ion-col>
             <ion-label>Nome</ion-label>
             <ion-item>
               <ion-input placeholder="NOME" formControlName="name"></ion-input>
             </ion-item>
           </ion-col>
-          <ion-col>
+          <ion-col >
             <ion-label>Descrizione</ion-label>
             <ion-item>
               <ion-input placeholder="DESCRIZIONE" formControlName="description"></ion-input>
@@ -40,37 +40,51 @@
           </ion-col>
         </ion-row>
 
-        <ion-row class="padding">
-          <ion-col >
+        <ion-row size="10" class="padding">
+          <ion-col>
             <ion-label>Tipo</ion-label>
             <ion-item>
-              
               <ion-select formControlName="type" okText="OK" cancel-text="Indietro" value="FUMETTO">
-                <ion-select-option  value="FUMETTO">FUMETTO</ion-select-option>
+                <ion-select-option value="FUMETTO">FUMETTO</ion-select-option>
+                <ion-select-option value="MANGA">MANGA</ion-select-option>
               </ion-select>
             </ion-item>
           </ion-col>
-
           <ion-col>
             <ion-label>Autore</ion-label>
             <ion-item>
-              <ion-input placeholder="AUTORE" formControlName="author"></ion-input>
-              <ion-select okText="OK" cancel-text="Indietro">
-                <ion-select-option value="Milo Manara" >Milo Manara </ion-select-option>
-              </ion-select >
+              
+              <ion-select formControlName="author" multiple="true" okText="OK" cancel-text="Indietro">
+               
+                  <ion-select-option *ngFor="let item of listaAutori.list;" value={{item.id}}> {{item.name}} {{item.surname}}</ion-select-option>
+           
+              </ion-select>
             </ion-item>
           </ion-col>
         </ion-row>
 
-        <ion-row class="padding">
-          <ion-label>Categoria</ion-label>
-          <ion-item>
-            <ion-input placeholder="CATEGORIA" formControlName="category"></ion-input>
-            <ion-select  okText="OK" cancel-text="Indietro">
-              <ion-select-option value="Azione" >Azione</ion-select-option>
+        <ion-row>
+          <ion-col>
+
+          </ion-col>
+          <ion-col>
+            <ion-label >Categoria</ion-label>
+          <ion-item >
+            <ion-select formControlName="category" multiple="true" okText="OK" cancel-text="Indietro">
+          
+                <ion-select-option *ngFor="let item of listaCategorie.list;"  value={{item.id}}> {{item.name}} </ion-select-option>
+         
             </ion-select>
           </ion-item>
+
+          </ion-col>
+          <ion-col>
+
+          </ion-col>
+          
+      
         </ion-row>
+   
         <!--
             <ion-row>
               <ion-item>
@@ -78,8 +92,9 @@
               </ion-item>
             </ion-row>
             -->
-        <ion-row>
-          <app-bottone testo="SALVA" class="ion-float-end" [disabilitato]="!fumettoForm.valid"(click)="aggiungiFumetto()"></app-bottone>
+        <ion-row class="ion-float-end">
+          <app-bottone testo="SALVA" class="ion-float-end" [disabilitato]="!fumettoForm.valid"
+            (click)="aggiungiFumetto()"></app-bottone>
         </ion-row>
       </ion-grid>
     </div>
