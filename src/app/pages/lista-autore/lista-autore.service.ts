@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CreaAutore } from 'src/app/model/package/command/crea-autore';
 
 
 @Injectable({
@@ -14,10 +15,11 @@ export class ListaAutoreService {
 
 
   eliminaListaAutori(id:number) {
-    const headers = { 'Content-Type': 'application/json'};
-    return this.http.delete("http://2.44.173.210:7080/comic-be/api/author/delete/"+id, {headers} );
+    
+    return this.http.delete("http://2.44.173.210:7080/comic-be/api/author/delete/"+id);
   }
-  //modificaListaAutori() {
-  //  return this.http.put("http://2.44.173.210:7080/comic-be/api/author/update/",{ viewValue });
-  //}
+  modificaListaAutori(autore:CreaAutore) {
+   
+    return this.http.put("http://2.44.173.210:7080/comic-be/api/author/update/",autore);
+  }
 }
