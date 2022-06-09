@@ -38,6 +38,14 @@ const routes: Routes = [
     path: 'lista-fumetti',
     loadChildren: () => import('./pages/fumetto/lista-fumetti/lista-fumetti.module').then( m => m.ListaFumettiPageModule)
   },
+  {
+    path: 'crea-utente',
+    loadChildren: () => import('./pages/utente/crea-utente/crea-utente.module').then( m => m.CreaUtentePageModule)
+  },
+  {
+    path: 'lista-utenti',
+    loadChildren: () => import('./pages/utente/lista-utenti/lista-utenti.module').then( m => m.ListaUtentiPageModule)
+  },
 
 
   

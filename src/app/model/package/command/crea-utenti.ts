@@ -1,4 +1,4 @@
-export class UserDTO {
+export class CreaUtenti {
     id:number;
     name:string;
     surname:string;

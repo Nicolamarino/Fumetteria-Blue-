@@ -6,3 +6,8 @@
 ion-button{
    --background: rgb(112,90,233);
 }
+
+ion-select::part(icon) {
+    margin-left: 87%;
+    position: absolute;
+  }

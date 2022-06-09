@@ -18,7 +18,7 @@
 
 <ion-content>
   <div class="padding">
-    <h1>Lista Categorie</h1>
+    <h1>Lista Utenti</h1>
 
     <ion-accordion-group class="ion-padding-vertical">
       <ion-accordion>
@@ -38,7 +38,11 @@
                     </ion-col>
                     <ion-col>
                       <ion-label></ion-label>
-                      <ion-input placeholder="DESCRIZIONE" formControlName="descrizione"></ion-input>
+                      <ion-input placeholder="COGNOME" formControlName="cognome"></ion-input>
+                    </ion-col>
+                    <ion-col>
+                      <ion-label></ion-label>
+                      <ion-input placeholder="EMAIL" formControlName="email"></ion-input>
                     </ion-col>
                   </ion-row>
                 </ion-col>
@@ -68,7 +72,10 @@
             NOME
           </ion-col>
           <ion-col>
-            DESCRIZIONE
+            COGNOME
+          </ion-col>
+          <ion-col>
+            EMAIL
           </ion-col>
           <ion-col>
             AZIONI
@@ -77,20 +84,24 @@
         <ion-row class="riga2">
           <ion-col class="riga2">
 
-           <div *ngFor="let item of listaCategorie.list; index as i">
+           <div *ngFor="let item of listaUtenti.list; index as i">
               <ion-row>
                 <ion-col size="9">
-                  <app-categorie nome="{{item.name}}" descrizione="{{item.description}}" id="{{item.id}}" [hidden]="mostra[i]"></app-categorie>
-                  
+                  <app-utenti nome="{{item.name}}" cognome="{{item.surname}}" email="{{item.email}}" id="{{item.id}}" [hidden]="mostra[i]"></app-utenti>
                   <ion-row [hidden]="!mostra[i]">
                     <ion-col>
                       <ion-item>
-                      <ion-input (ionChange)="aggionraAutore(i,$event,'nome')" value={{item.name}} ></ion-input>
+                      <ion-input (ionChange)="aggiornaUtente(i,$event,'nome')" value={{item.name}} ></ion-input>
                     </ion-item>
                   </ion-col>
                   <ion-col>
                     <ion-item>
-                      <ion-input (ionChange)="aggionraAutore(i,$event,'descrizione')" value={{item.description}}></ion-input>
+                      <ion-input (ionChange)="aggiornaUtente(i,$event,'cognome')" value={{item.surname}}></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item>
+                      <ion-input (ionChange)="aggiornaUtente(i,$event,'email')" value={{item.email}}></ion-input>
                     </ion-item>
                   </ion-col>
                   </ion-row>
@@ -99,7 +110,7 @@
                   <div class="ion-float-center">
                     <ion-row class="ion-padding-vertical" >
                       <ion-col size="4">
-                        <ion-icon class="ion-float-end" name="create" color="primary" [hidden]="mostra[i]" (click)="modificaAutore(item)" ></ion-icon>
+                        <ion-icon class="ion-float-end" name="create" color="primary" [hidden]="mostra[i]" (click)="modificaUtente(item)" ></ion-icon>
                         <ion-icon class="ion-float-end" name="create" color="success" [hidden]="!mostra[i]" (click)="confermaModifica(i) "></ion-icon>
                       </ion-col>
                       <ion-col size="4">
