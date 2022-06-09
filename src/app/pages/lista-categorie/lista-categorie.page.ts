@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CategorieDTO } from 'src/app/model/package/DTO/categorie-dto';
 import { ListaCategorieDTO } from 'src/app/model/package/DTO/lista-categorie-dto';
@@ -14,8 +14,8 @@ export class ListaCategoriePage implements OnInit {
   filterform;
   categorie:CategorieDTO
   listaCategorie:ListaCategorieDTO;
-  
-  constructor(private fb:FormBuilder, private service:ListaCategorieService) { 
+  mostra:boolean[]=[];
+  constructor(private fb:FormBuilder, private service:ListaCategorieService,private zone:NgZone) { 
     this.filterform=this.fb.group ({
       "nome":[""],
       "descrizione":[""]
@@ -23,6 +23,26 @@ export class ListaCategoriePage implements OnInit {
     this.categorie= new CategorieDTO;
     this.listaCategorie= new ListaCategorieDTO; 
     }
+    modificaAutore(item:CategorieDTO){
+      let index = this.listaCategorie.list.indexOf(item);
+      this.mostra[index]=!this.mostra[index];
+      return index
+    }
+    aggionraAutore(i:number,event:any, testo:string){
+      if(testo=="nome"){
+        this.listaCategorie.list[i].name=event.target.value;
+      }else{
+        this.listaCategorie.list[i].description=event.target.value;
+      }
+    }
+    confermaModifica(item:number){
+      console.log(this.listaCategorie)
+      this.service.modificaListaCategoria(this.listaCategorie.list[item]).subscribe(resp =>{
+        this.zone.runOutsideAngular(() => {
+          window.location.href = '/lista-autore';
+        });
+       });
+   }
     reset(){
       this.filterform.reset()
     }

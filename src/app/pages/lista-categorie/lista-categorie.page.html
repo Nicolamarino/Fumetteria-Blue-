@@ -76,30 +76,42 @@
         </ion-row>
         <ion-row class="riga2">
           <ion-col class="riga2">
-            <div *ngFor="let item of listaCategorie.list">
+
+           <div *ngFor="let item of listaAutori.list; index as i">
               <ion-row>
                 <ion-col size="9">
-                  <app-categorie nome="{{item.name}}" descrizione="{{item.description}}" id="{{item.id}}"></app-categorie>  
+                  <app-categorie nome="{{item.name}}" descrizione="{{item.description}}" id="{{item.id}}"></app-categorie>
+                        autore="{{item.author.name}} {{item.author.surname}}" categoria="{{item.category.name}}"
+                        id="{{item.id}}"></app-fumetto>  
+                  <ion-row [hidden]="!mostra[i]">
+                    <ion-col>
+                      <ion-item>
+                      <ion-input (ionChange)="aggionraAutore(i,$event,'nome')" value={{item.name}} ></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item>
+                      <ion-input (ionChange)="aggionraAutore(i,$event,'descrizione')" value={{item.description}}></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  </ion-row>
                 </ion-col>
                 <ion-col class="ion-padding-vertical" size="3">
                   <div class="ion-float-center">
                     <ion-row class="ion-padding-vertical" >
                       <ion-col size="4">
-                        <ion-icon class="ion-float-end" name="create"></ion-icon>
+                        <ion-icon class="ion-float-end" name="create" color="primary" [hidden]="mostra[i]" (click)="modificaAutore(item)" ></ion-icon>
+                        <ion-icon class="ion-float-end" name="create" color="success" [hidden]="!mostra[i]" (click)="confermaModifica(i) "></ion-icon>
                       </ion-col>
                       <ion-col size="4">
                         <ion-icon (click)="elimina(item)" color="danger" name="trash-outline"></ion-icon>
                       </ion-col>
                       <ion-col size="4">
-
                       </ion-col>
                     </ion-row>
-                   
                   </div>
-                  
                 </ion-col>
               </ion-row>  
-                    
             </div> 
               
           </ion-col>
