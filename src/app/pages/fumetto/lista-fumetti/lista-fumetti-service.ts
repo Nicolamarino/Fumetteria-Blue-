@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ListaFumettiDto } from 'src/app/model/package/DTO/fumetto/lista-fumetti-dto';
-import { CreaFumettoCommand } from 'src/app/model/package/command/fumetto/crea-fumetto-command';
-
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +15,9 @@ export class ListaFumettiService {
     const headers = { 'Content-Type': 'application/json'};
     return this.http.delete("http://2.44.173.210:7080/comic-be/api/comic/delete/"+id, {headers} );
   }
-   modificaListaFumetti(fumetti:CreaFumettoCommand) {
+  // modificaListaFumetti(fumetti:CreaFumettoCommand) {
    
-    return this.http.put("http://2.44.173.210:7080/comic-be/api/comic/update/",fumetti);
-  }
+  //   return this.http.put("http://2.44.173.210:7080/comic-be/api/comic/update/",fumetti);
+  // }
+
 }
